@@ -1,0 +1,8 @@
+.posts{
+    flex: 6;
+    height: calc(100vh - 50px);
+
+}
+.postWrapper{
+    padding: 20px;
+}

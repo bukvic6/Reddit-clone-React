@@ -1,13 +1,7 @@
-import Bar from "./components/AppBar";
-import SideNav from "./components/SideNav";
+import Home from "./pages/home/Home";
+import "./App.css"
 function App() {
-  return (
-    <div className="container">
-      <Bar/>
-      <SideNav/>
-      
-    </div>
-  );
+  return <Home/>
 }
 
 export default App;
