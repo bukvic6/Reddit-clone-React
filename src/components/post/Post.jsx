@@ -3,21 +3,20 @@ import "./post.css"
 import { ThumbUp } from '@mui/icons-material'
 import { ThumbDown } from '@mui/icons-material'
 
-export default function Post() {
+const Post = ({data}) => {
   return (
     <div className='post'>
         <div className="postWrapper">
             <div className="postTop">
                 <div className="topLeft">
                     <img src="/assets/rebbitLogo.png" alt="" className="profilePic" />
-                    <span className="userName">Marko Markovic</span>
+                    <span className="userName">{data.username}</span>
                     <span className="postDate">21.september 2022.</span>
-
                 </div>
             </div>
             <hr/>
             <div className="postMiddle">
-                <span className="postText">This is my first post!</span>
+                <span className="postText">{data.text}</span>
             </div>
         
             <div className="postOptions">
@@ -37,3 +36,4 @@ export default function Post() {
     </div>
   )
 }
+export default Post
