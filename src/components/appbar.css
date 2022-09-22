@@ -13,6 +13,10 @@
     flex: 3;
 
 }
+.topbarLogo a{
+    text-decoration: none;
+    color: rgb(18, 38, 31);
+}
 .topbarSearch{
     flex: 5;
 }
@@ -38,15 +42,22 @@
 }
 .topbarRight{
     display: flex;
-    align-items: center;
+    align-content: center;
     justify-content: center;
     flex: 4;
+    
 }
-.topbarLink{
+.topbarRight a{
+    text-decoration: none;
+    color: black;
     margin-right: 10px;
-    cursor: pointer;
-    font-size: 15px;
-
+    font-size: 20px;
+    
+}
+.links{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
 }
 .rebbitLogo{
     width: 40px;
@@ -57,5 +68,5 @@
     font-size: 24px;
     margin-left: 20px;
     font-weight: bold;
-    
+
 }

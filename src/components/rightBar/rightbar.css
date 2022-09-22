@@ -1,4 +1,28 @@
 .rightBar{
     flex: 4;
     height: calc(100vh - 50px);
+    padding: 30px;
+    
+}
+.rightWrapper{
+    border: 2px solid rgba(178, 99, 99, 0.644);
+    border-radius: 10px;
+    padding: 20px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(215, 44, 213, 0.25) 0px 30px 60px -12px inset, rgba(170, 12, 81, 0.3) 0px 18px 36px -18px inset;
+}
+.addCommunityButton{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+
+}
+.herbPic{
+    
+    border-radius: 10%;
+
 }

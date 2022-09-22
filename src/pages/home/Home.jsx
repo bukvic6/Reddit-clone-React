@@ -8,7 +8,6 @@ import RightBar from '../../components/rightBar/RightBar'
 export default function Home() {
   return (
     <>
-    <AppBar/>
     <div className="homeContainer">
     <SideBar/>
     <Posts/>
