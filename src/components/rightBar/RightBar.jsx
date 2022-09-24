@@ -1,7 +1,9 @@
 import React from 'react'
 import "./rightbar.css"
+import { Link } from 'react-router-dom'  
 
 export default function RightBar() {
+  
   return (
     <div className='rightBar'>
       <div className="rightWrapper">
@@ -9,7 +11,7 @@ export default function RightBar() {
         <img src="/assets/herbs.png" alt="" className="herbPic" />
         <hr/>
 
-        <button className="addCommunityButton">Create community</button>
+        <Link to='/createComm' className="addCommunityButton">Create community</Link>
 
         </div>
         
