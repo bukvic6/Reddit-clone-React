@@ -10,7 +10,7 @@ const Post = ({data}) => {
             <div className="postTop">
                 <div className="topLeft">
                     <img src="/assets/rebbitLogo.png" alt="" className="profilePic" />
-                    <span className="userName">{data.username}</span>
+                    <span className="userName">{data.title}</span>
                     <span className="postDate">21.september 2022.</span>
                 </div>
             </div>
