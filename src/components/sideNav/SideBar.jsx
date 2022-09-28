@@ -1,8 +1,20 @@
 import React from 'react'
+import { useEffect, useState} from 'react'
+import CommunityService from '../../services/CommunityService';
 import "./sidebar.css"
 
-export default function SideBar() {
-  const communities = ['cats', 'dogs', 'funny', ' videos']
+const SideBar = () =>{
+  const [communities, setCommunities] = useState([]);
+
+  const fetchData = async () => {
+    const { data } = await CommunityService.getCommunities();
+    setCommunities(data)
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   
   return (
     <div className='sideBar'>
@@ -12,7 +24,7 @@ export default function SideBar() {
         <hr/>
         <ul className="communityList">
           {communities.map(community => (
-          <li><a href={`/r/${community}`}>{community}</a></li>
+          <li><a href={`/community/${community.name}`}>r/ {community.name}</a></li>
           ))}
         </ul>
         <button className="sidebarButton">Show more</button>
@@ -22,3 +34,4 @@ export default function SideBar() {
     
   )
 }
+export default SideBar
