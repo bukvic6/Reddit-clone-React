@@ -1,5 +1,4 @@
 import React from 'react'
-import {Search} from "@mui/icons-material"
 import "./appbar.css"
 import { Link } from 'react-router-dom'
 
@@ -9,12 +8,6 @@ export default function AppBar() {
       <div className="topbarLogo">
         <img src="/assets/rebbitLogo.png" alt="" className="rebbitLogo" />
         <Link to="/" className="logo">Rebbit</Link>
-      </div>
-      <div className="topbarSearch">
-        <div className="searchBar">
-          <Search className='searchIcon'/>
-          <input type="text" placeholder='Search' className="searchInput"/>
-        </div>
       </div>
       
 
