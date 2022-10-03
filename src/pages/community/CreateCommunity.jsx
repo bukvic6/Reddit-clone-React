@@ -44,9 +44,6 @@ export default function CreateCommunity() {
 
           </div>
         </div>
-        
-
-   
     </div>
   )
 }

@@ -10,5 +10,8 @@ class CommunityService{
     createCommunity(community){
         return axios.post(COMM_BASE_URL + '/create', community)
     }
+    getCommunityById(id){
+        return axios.get(COMM_BASE_URL + '/' + id)
+    }
 }
 export default new CommunityService()

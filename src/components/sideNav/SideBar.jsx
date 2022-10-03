@@ -24,7 +24,7 @@ const SideBar = () =>{
         <hr/>
         <ul className="communityList">
           {communities.map(community => (
-          <li><a href={`/community/${community.name}`}>r/ {community.name}</a></li>
+          <li><a href={`/community/${community.id}`}>r/ {community.name}</a></li>
           ))}
         </ul>
         <button className="sidebarButton">Show more</button>
