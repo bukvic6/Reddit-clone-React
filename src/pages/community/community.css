@@ -1,0 +1,21 @@
+.community{
+
+}
+.Wrapper{
+    display: flex; 
+    height: calc(100vh - 50px);
+}
+.topDiv{
+    
+  
+
+}
+
+.middleDiv{
+    flex: 2;
+
+}
+.rightDiv{
+    flex: 1;
+
+}
