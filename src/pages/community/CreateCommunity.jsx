@@ -9,14 +9,23 @@ import CommunityService from '../../services/CommunityService';
 export default function CreateCommunity() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const[pdf, setSelectedFile] = useState(null);
   const[rules, setRules] = useState("");
+
+  const handleFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(name);
-    let community = {name:name, description:description,rules:rules}
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('description', description);
+    formData.append('pdf', pdf);
+    // let community = {name:name, description:description,communityPDF:pdf}
     try{
-      const resp = await CommunityService.createCommunity(community);
+      const resp = await CommunityService.createCommunity(formData);
       console.log(resp.data)
     } catch(error){
       console.log(error.response)
@@ -38,8 +47,11 @@ export default function CreateCommunity() {
 
           <h4>Add rules to your community</h4>
           <textarea id="subject" name="subject" placeholder="Perfect place for rules :)" value={rules} onChange={(e) => setRules(e.target.value)}></textarea>
-          <input type="submit" value="Submit">
-          </input>
+
+
+          <h4>Add pdf to your post</h4>
+            <input type="file" accept="application/pdf" onChange={handleFileChange} />
+            <input type="submit" value="Submit" />
           </form>
 
           </div>

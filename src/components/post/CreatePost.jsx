@@ -1,5 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import CommunityService from '../../services/CommunityService';
+import "./CreatePost.css"
+
 
 export default function CreatePost() {
     const [title, setTitle] = useState("");

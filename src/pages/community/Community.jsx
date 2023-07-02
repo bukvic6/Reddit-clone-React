@@ -58,7 +58,7 @@ export default function Community() {
             <img src="/assets/herbs.png" alt="" className="herbPic" />
             <hr/>
 
-            <Link to='/createPost' params={{ testvalue: "hello" }} className="addCommunityButton">Create post</Link>
+            <Link to={`/createPost/${id}`} className="addCommunityButton">Create post</Link>
 
             </div>
 

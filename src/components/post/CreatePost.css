@@ -1,4 +1,4 @@
-.createCommunity{
+.createPost{
     display: flex;
     width: 100%;
     height: calc(100vh - 50px);
@@ -39,4 +39,17 @@ input[type=text], select, textarea {
     background-color: #04AA6D;
     color: white;
     padding: 12px 20px;
-    border: 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }

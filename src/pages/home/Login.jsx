@@ -10,33 +10,35 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const login = {username: username, password: password}
-    try{
+    const login = { username: username, password: password };
+    try {
       const resp = await UserService.login(login);
+      const token = resp.data;
+      localStorage.setItem('token', token);
       navigate("/");
-    } catch (error){
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
   }
 
   return (
     <div className="login">
-        <div clasregisterDatasName="loginWrapper">
-            <div className="pictureLeft">
-            <img src="/assets/login2.jpg" alt="" className="loginpic" />
-            </div>
-            <div className="form">
-            <label for="uname"><b>Username</b></label>
-            <input className="logininput" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter Username" name="uname"/>
+      <div className="loginWrapper">
+        <div className="pictureLeft">
+          <img src="/assets/login2.jpg" alt="" className="loginpic" />
+        </div>
+        <div className="form">
+          <form onSubmit={handleSubmit}> 
+            <label htmlFor="uname"><b>Username</b></label>
+            <input className="logininput" type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter Username" name="uname" />
 
-            <label for="psw"><b>Password</b></label>
-            <input className="logininput" type="password" value={password} onChange={(e) => setPassword(e.target.value)}placeholder="Enter Password" name="psw" />
+            <label htmlFor="psw"><b>Password</b></label>
+            <input className="logininput" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter Password" name="psw" />
 
             <button className='buttonLogin' type="submit">Login</button>
-            <label>
-            </label>
-            </div>
+          </form>
         </div>
+      </div>
     </div>
-  )
+  );
 }

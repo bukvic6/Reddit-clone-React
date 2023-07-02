@@ -7,7 +7,7 @@ import Community from "./pages/community/Community";
 import Login from "./pages/home/Login";
 import AppBar from "./components/AppBar";
 import CreateCommunity from "./pages/community/CreateCommunity";
-import CreatePost from "./pages/post/CreatePost";
+import CreatePost from "./components/post/CreatePost";
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/createComm" element={<CreateCommunity/>} />
         <Route path="/community/:id" element={<Community/>} />
-        <Route path="/createPost" element={<CreatePost/>}/>
+        <Route path="/createPost/:id" element={<CreatePost/>}/>
       </Routes>
 
 
