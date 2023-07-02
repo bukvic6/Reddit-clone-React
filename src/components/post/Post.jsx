@@ -22,7 +22,7 @@ const Post = ({data}) => {
             <div className="postOptions">
                 <div className="bottomLeft">
                 <ThumbUp className='upvote'/>
-                <span className="karma">200</span>
+                <span className="karma">{data.karma}</span>
                 <ThumbDown className='downvote'/>
                 </div>
                 <div className="bottomRight">

@@ -1,4 +1,6 @@
 import axios from "axios";
+import api from './InterceptorService';
+
 
 const COMM_BASE_URL = "http://localhost:8080/api/community";
 
@@ -8,7 +10,7 @@ class CommunityService{
         return axios.get(COMM_BASE_URL);
     }
     createCommunity(community){
-        return axios.post(COMM_BASE_URL + '/create', community)
+        return api.post(COMM_BASE_URL + '/create', community)
     }
     getCommunityById(id){
         return axios.get(COMM_BASE_URL + '/' + id)
