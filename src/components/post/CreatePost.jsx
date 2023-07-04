@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CommunityService from '../../services/CommunityService';
+import PostService from '../../services/PostService';
 import "./CreatePost.css"
 
 
@@ -19,9 +20,15 @@ export default function CreatePost() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       console.log(title);
-      let community = {title:title, description:text, communityDTO:id}
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('text', text);
+      if(pdf){
+        formData.append('pdf', pdf)
+      }
+      formData.append('communityDTO', id);
       try{
-        const resp = await CommunityService.createCommunity(community);
+        const resp = await PostService.createPost(formData);
         console.log(resp.data)
       } catch(error){
         console.log(error.response)

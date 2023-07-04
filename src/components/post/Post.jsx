@@ -1,9 +1,32 @@
 import React from 'react'
+import axios from 'axios'
 import "./post.css"
 import { ThumbUp } from '@mui/icons-material'
 import { ThumbDown } from '@mui/icons-material'
+import PostService from '../../services/PostService'
 
 const Post = ({data}) => {
+
+    const handleUpvote = async () => {
+        const form = { type: 'UPVOTE', postId: data.id }
+
+        try {
+            await PostService.postReaction(form);
+        } catch (error) {
+            console.log(error.response)
+        }
+      };
+    
+      const handleDownvote = async () => {
+        const downvote = { type: 'DOWNVOTE', postId: data.id }
+
+        try {
+        await PostService.postReaction(downvote);
+        } catch (error) {
+            console.log(error.response)
+        }
+      };
+    
   return (
     <div className='post'>
         <div className="postWrapper">
@@ -21,9 +44,9 @@ const Post = ({data}) => {
         
             <div className="postOptions">
                 <div className="bottomLeft">
-                <ThumbUp className='upvote'/>
+                <ThumbUp className='upvote'  onClick={handleUpvote}/>
                 <span className="karma">{data.karma}</span>
-                <ThumbDown className='downvote'/>
+                <ThumbDown className='downvote' onClick={handleDownvote}/>
                 </div>
                 <div className="bottomRight">
                     <span className="postComments">10 comments</span>

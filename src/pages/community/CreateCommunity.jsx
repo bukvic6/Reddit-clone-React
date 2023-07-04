@@ -22,9 +22,10 @@ export default function CreateCommunity() {
     const formData = new FormData();
     formData.append('name', name);
     formData.append('description', description);
-    formData.append('pdf', pdf);
-    // let community = {name:name, description:description,communityPDF:pdf}
-    try{
+    if(pdf){
+      formData.append('pdf', pdf)
+    }
+      try{
       const resp = await CommunityService.createCommunity(formData);
       console.log(resp.data)
     } catch(error){

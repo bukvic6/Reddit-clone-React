@@ -21,7 +21,7 @@ const Posts = () => {
     {posts.length > 0 ? (
       <div>
       {posts.map((post,id)=>{
-        return <Post data={post} id = {id}/>
+        return <Post key={post.id} data={post} id = {id}/>
       })}
     </div>
     ) : (
