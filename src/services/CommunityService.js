@@ -22,5 +22,8 @@ class CommunityService{
     searchCommunities(params){
         return axios.get(COMM_BASE_URL + `/search`,{params})
     }
+    deleteCommunity(id){
+        return api.delete(COMM_BASE_URL + '/' + id)
+    }
 }
 export default new CommunityService()

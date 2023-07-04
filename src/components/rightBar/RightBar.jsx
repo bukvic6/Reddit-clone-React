@@ -96,11 +96,11 @@ export default function RightBar() {
           <ul className="communityList">
           {communities.map(community => (
             
-          <li><a href={`/community/${community.id}`}>r/ {community.name} Posts: {community.count} Karma: {community.karma}</a></li>
+          <li><a href={`/community/${community.id}`}>r/ {community.name} Karma: {community.karma} Posts: {community.count} {community.fileName}</a></li>
           ))}
           {posts.map(post => (
             
-          <li>r/ {post.title}{post.id}</li>
+          <li>r/ {post.title} text: {post.text}</li>
           ))}
         </ul>
         </div>

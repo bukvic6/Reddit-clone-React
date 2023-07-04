@@ -1,6 +1,5 @@
 .posts{
     flex: 6;
     height: calc(100vh - 50px);
-    background-color: rgba(180, 220, 168, 0.363);
 
 }

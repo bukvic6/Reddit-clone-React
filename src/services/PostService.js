@@ -26,6 +26,9 @@ class PostService {
     postReaction(reaction){
         return api.post(REACTION_BASE_URL, reaction)
     }
+    deletePost(postId){
+        return api.delete(POST_BASE_URL + "/" + postId)
+    }
 
 }
 export default new PostService()

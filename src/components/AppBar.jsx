@@ -1,8 +1,19 @@
 import React from 'react'
 import "./appbar.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function AppBar() {
+  const navigate = useNavigate();
+
+  const isLoggedIn = () => {
+    const token = localStorage.getItem('token');
+    return !!token;
+};
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate("/")
+  };
   return (
     <div className='topbarContainer'>
       <div className="topbarLogo">
@@ -13,8 +24,13 @@ export default function AppBar() {
 
       <div className="topbarRight">
         <ul className="links">
-          <CustomLink to= "/login">Login</CustomLink>
-          <CustomLink to= "/register">Register</CustomLink>
+        {!isLoggedIn() && <CustomLink to="/login">Login</CustomLink>}
+          {!isLoggedIn() && <CustomLink to="/register">Register</CustomLink>}
+          {isLoggedIn() && (
+            <li>
+              <Link to="#" className="logoutLink" onClick={handleLogout}>Logout</Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>

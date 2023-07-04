@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CommunityService from '../../services/CommunityService';
 import PostService from '../../services/PostService';
+import { useNavigate } from 'react-router-dom';
 import "./CreatePost.css"
 
 
@@ -11,6 +12,7 @@ export default function CreatePost() {
     const [text, setText] = useState("");
     const[pdf, setSelectedFile] = useState(null);
     const { id } = useParams()
+    const navigate = useNavigate();
 
 
     const handleFileChange = (e) => {
@@ -30,7 +32,8 @@ export default function CreatePost() {
       try{
         const resp = await PostService.createPost(formData);
         console.log(resp.data)
-      } catch(error){
+        navigate('/community/' + id);
+        } catch(error){
         console.log(error.response)
       }
     };

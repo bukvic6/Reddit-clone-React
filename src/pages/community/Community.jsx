@@ -32,11 +32,11 @@ export default function Community() {
   return (
     <div className="community">
         <div className="topDiv">
-            
-            <img src="/assets/rebbitLogo.png" alt="" className="profilePic" />
-            <div className="commName">
+                        <div className="commName">
             <h4 className='naziv'>{community.name}</h4>
-            <p>r/{community.name}</p>
+            <p>{community.description}</p>
+
+            <p>Creation Date: {community.creationDate}</p>
             </div>
         </div>
         <div className="Wrapper">

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import "./createCommunity.css"
 import CommunityService from '../../services/CommunityService';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +12,7 @@ export default function CreateCommunity() {
   const [description, setDescription] = useState("");
   const[pdf, setSelectedFile] = useState(null);
   const[rules, setRules] = useState("");
+  const navigate = useNavigate();
 
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -28,6 +30,7 @@ export default function CreateCommunity() {
       try{
       const resp = await CommunityService.createCommunity(formData);
       console.log(resp.data)
+      navigate("/")
     } catch(error){
       console.log(error.response)
     }

@@ -25,7 +25,7 @@ const SideBar = () =>{
         <ul className="communityList">
           {communities.map(community => (
             
-          <li><a href={`/community/${community.id}`}>r/ {community.name}{community.id}</a></li>
+          <li><a href={`/community/${community.id}`}>r/ {community.name}</a></li>
           ))}
          
         </ul>
